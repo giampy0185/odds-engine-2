@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: odds-engine
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn cloud_app:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: ODDS_API_KEY
+        sync: false
+      - key: ODDS_API_BASE
+        value: https://api.the-odds-api.com/v4
+      - key: ODDS_SPORT
+        value: soccer_italy_serie_a
+      - key: ODDS_REGIONS
+        value: eu
+      - key: ODDS_MARKETS
+        value: h2h
+      - key: ODDS_FORMAT
+        value: decimal
+      - key: POLL_MINUTES
+        value: "90"
+      - key: BANKROLL_UNITS
+        value: "100"
+      - key: PAPER_ONLY
+        value: "true"
+      - key: ODDS_DB_PATH
+        value: odds_engine.sqlite

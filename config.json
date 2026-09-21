@@ -1,0 +1,13 @@
+{
+  "sport_key": "soccer_italy_serie_a",
+  "regions": "eu",
+  "markets": "h2h",
+  "odds_format": "decimal",
+  "poll_minutes": 5,
+  "bankroll_units": 100.0,
+  "paper_only": true,
+  "score_threshold": 60,
+  "max_stake_units": 1.0,
+  "max_daily_stake_units": 3.0,
+  "database": "odds_engine.sqlite"
+}
